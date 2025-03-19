@@ -94,3 +94,4 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
 
 **Under construction...**
 
+CUDA_VISIBLE_DEVICES=0 uv run torchrun --nproc_per_node=1 main.py --config configs/s2r.yaml
