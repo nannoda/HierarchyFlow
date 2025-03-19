@@ -4,8 +4,8 @@ task_name: base_exp
 
 dataset:
   train:
-    source_list: 'datasets/GTA/train.txt'
-    target_list: 'datasets/Cityscapes/train.txt'
+    source_list: 'datasets/bin/sim/train.txt'
+    target_list: 'datasets/bin/real/train.txt'
     # source_root: '/mnt/lustre/share_data/fanweichen2/GTA_backup/ToJH'
     # target_root: '/mnt/lustre/fanweichen2/RESEARCH/I2I/data/GTA/Cityscapes/'
     width: 512
@@ -17,8 +17,8 @@ dataset:
     return_name: False
     batch_size: 1
   test:
-    source_list: 'datasets/GTA/test.txt'
-    target_list: 'datasets/Cityscapes/test.txt'
+    source_list: 'datasets/bin/sim/test.txt'
+    target_list: 'datasets/bin/real/test.txt'
     # source_root: '/mnt/lustre/share_data/fanweichen2/GTA_backup/ToJH'
     # target_root: '/mnt/lustre/fanweichen2/RESEARCH/I2I/data/GTA/Cityscapes/'
     width: 512
