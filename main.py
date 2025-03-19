@@ -13,7 +13,7 @@ from model.trainers.hf_trainer import Trainer
 parser = argparse.ArgumentParser(description='PyTorch HierarchyFlow Training')
 parser.add_argument('--config', type=str, default='configs/config.yaml', help='config file')
 parser.add_argument('--eval_only', action='store_true', help='evaluation mode')
-parser.add_argument('--local_rank', type=int, default=-1, help='node rank for distributed training')
+parser.add_argument('--local_rank', type=int, default=int(os.environ.get("LOCAL_RANK", -1)), help='node rank for distributed training')
 parser.add_argument('--seed', type=int, default=0, help='seed for initializing training')
 parser.add_argument('--load_path', type=str, help='path for ckpt')
 

@@ -6,8 +6,8 @@ dataset:
   train:
     source_list: 'datasets/bin/sim/train.txt'
     target_list: 'datasets/bin/real/train.txt'
-    # source_root: '/mnt/lustre/share_data/fanweichen2/GTA_backup/ToJH'
-    # target_root: '/mnt/lustre/fanweichen2/RESEARCH/I2I/data/GTA/Cityscapes/'
+    source_root: '/'
+    target_root: '/'
     width: 512
     height: 256
     scale_l: 0.8
@@ -19,8 +19,8 @@ dataset:
   test:
     source_list: 'datasets/bin/sim/test.txt'
     target_list: 'datasets/bin/real/test.txt'
-    # source_root: '/mnt/lustre/share_data/fanweichen2/GTA_backup/ToJH'
-    # target_root: '/mnt/lustre/fanweichen2/RESEARCH/I2I/data/GTA/Cityscapes/'
+    source_root: '/'
+    target_root: '/'
     width: 512
     height: 256
     scale_l: 0.8
