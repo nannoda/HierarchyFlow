@@ -452,7 +452,7 @@ class HierarchyFlow(nn.Module):
         )
 
     def forward(self, content: torch.Tensor, style: torch.Tensor) -> torch.Tensor:
-        style_feat = self.style_net(style)
+        style_feat: torch.Tensor = self.style_net(style)
         content = self.padding(content)
         b_size, n_channel, height, width = content.shape
         for i in range(self.num_block):
