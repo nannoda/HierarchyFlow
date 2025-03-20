@@ -96,7 +96,7 @@ def process_video(model, video_path, output_video_path, device, config):
     frame_pattern = os.path.join(temp_dir, "frame_%04d.png")
     ffmpeg_cmd = [
         "ffmpeg", "-y", "-framerate", str(frame_rate), "-i", frame_pattern, 
-        "-c:v", "libvpx-vp9", "-b:v", "1M", "-pix_fmt", "yuva420p", 
+        "-c:v", "libopenh264", "-pix_fmt", "yuv420p", 
         output_video_path
     ]
     
