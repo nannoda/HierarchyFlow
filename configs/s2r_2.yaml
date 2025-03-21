@@ -1,0 +1,54 @@
+# logdir = os.path.join(output, task_name)
+output: ./output_dir/
+task_name: base_exp
+
+dataset:
+  train:
+    source_list: 'datasets/bin/sim/train.txt'
+    target_list: 'datasets/bin/real/train.txt'
+    source_root: '/'
+    target_root: '/'
+    width: 984
+    height: 538
+    scale_l: 0.8
+    scale_h: 1.0
+    transform: ['h_flip', 'random_resized_crop'] #['h_flip', 'v_flip', 'crop', 'normalize', 'random_resized_crop']
+    random_pair: True
+    return_name: False
+    batch_size: 1
+  test:
+    source_list: 'datasets/bin/sim/test.txt'
+    target_list: 'datasets/bin/real/test.txt'
+    source_root: '/'
+    target_root: '/'
+    width: 984
+    height: 538
+    scale_l: 0.8
+    scale_h: 1.0
+    transform: [] #['h_flip', 'v_flip', 'crop', 'normalize']
+    random_pair: False
+    return_name: True
+    batch_size: 16
+
+lr: 0.0001
+max_iter: 300000
+print_freq: 500
+save_freq: 500
+resume: False
+load_path: ''
+
+network:
+  configurable: False #[True, False]
+  pad_size: 10
+  in_channel: 3
+  out_channels: [30, 120] #[30, 120], [12, 60, 120], [30, 120, 480], [30, 120, 480, 1920]
+  weight_type: 'learned' #['fixed', 'sigmoid', 'softmax', 'attention', 'learned']
+
+loss:
+  vgg_encoder: 'model/losses/vgg_model/vgg_normalised.pth'
+  k: 0.8
+  weight: 0.1
+
+lr_scheduler:
+  type: cosine
+  eta_min: 0.0000000
